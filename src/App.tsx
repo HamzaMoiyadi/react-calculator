@@ -1,7 +1,7 @@
 import "./App.scss";
 import logo from "./logo.svg";
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -20,6 +20,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;
