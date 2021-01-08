@@ -1,0 +1,24 @@
+.colspan-2 {
+  grid-column: auto / span 2;
+}
+
+.gradient-lilac-lilacer {
+  background: rgb(246, 225, 253);
+  background: linear-gradient(
+    51deg,
+    rgba(246, 225, 253, 1) 0%,
+    rgba(245, 225, 253, 1) 100%
+  );
+}
+
+.gradient-gold-golder {
+  background: rgb(246, 210, 97);
+  background: linear-gradient(
+    51deg,
+    rgba(246, 210, 97, 1) 0%,
+    rgba(247, 205, 98, 1) 100%
+  );
+}
+.text-left {
+  text-align: left;
+}

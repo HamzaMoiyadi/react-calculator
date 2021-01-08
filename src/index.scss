@@ -1,15 +1,12 @@
 @import-normalize;
+@import "./styles/utils/colors.scss";
+@import "./styles/utils/font.scss";
+@import "./styles/utils/utilities.scss";
+@import "./styles/CalcMain.scss";
+@import "./styles/OutputContainer.scss";
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --color-black: hsla(0, 0, 10, 1);
+  --color-gray: hsla(0, 0, 50, 1);
+  --color-gray-lightest: hsla(0, 0, 78, 1);
 }
