@@ -11,8 +11,8 @@ const OutputContainer: React.FC<OutputContainerProps> = ({
           return <span className="[ icon ]" key={c}></span>;
         })}
       </div>
-      <small className="[ previous ]">{previousQuery || "64 x 56"}</small>
-      <p className="[ result ]">{query || 786098}</p>
+      <small className="[ previous ]">{previousQuery}</small>
+      <p className="[ result ]">{query}</p>
     </div>
   );
 };
