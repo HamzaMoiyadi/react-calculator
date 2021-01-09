@@ -1,9 +1,8 @@
-type OutputContainerProps = { query: string; previousQuery: string };
+import { CalculatorState } from "../types";
 
-const OutputContainer: React.FC<OutputContainerProps> = ({
-  query,
-  previousQuery,
-}) => {
+type OutputContainerProps = CalculatorState;
+
+const OutputContainer: React.FC<OutputContainerProps> = ({ displayValue }) => {
   return (
     <div className="[ output-container ]" id="output">
       <div className="[ icon-container ]">
@@ -11,8 +10,16 @@ const OutputContainer: React.FC<OutputContainerProps> = ({
           return <span className="[ icon ]" key={c}></span>;
         })}
       </div>
-      <small className="[ previous ]">{previousQuery}</small>
-      <p className="[ result ]">{query}</p>
+      {/* <small className="[ previous ]">
+        {previousQuery[previousQuery.length - 1]}
+      </small> */}
+      <p className="[ result ]">
+        {displayValue}
+        {/* {query.map((q, i) => {
+          console.log(q);
+          return <span key={i}>{q}</span>;
+        })} */}
+      </p>
     </div>
   );
 };

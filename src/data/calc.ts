@@ -1,28 +1,36 @@
-import { ButtonData } from "../types";
-import { deleteQuery, result } from "./calculator-functions";
+import { ButtonData, CalculatorState } from "../types";
+import {
+  addDot,
+  allClear,
+  convertToPercent,
+  performOperation,
+  result,
+  toggleSign,
+} from "./calculator-functions";
 
 type Buttons = ButtonData[];
 
 export const CALCULATOR_BUTTONS: Buttons = [
   {
     value: "C",
-    handler: deleteQuery,
+    handler: allClear,
     className: "gradient-lilac-lilacer",
   },
   {
     value: "±",
-    handler: null,
+    handler: toggleSign,
     className: "gradient-lilac-lilacer",
   },
   {
     value: "%",
-    handler: null,
+    handler: convertToPercent,
     className: "gradient-lilac-lilacer",
   },
   {
     value: "÷",
-    handler: null,
+    handler: performOperation,
     className: "gradient-gold-golder",
+    operator: "/",
   },
   {
     value: "7",
@@ -38,8 +46,9 @@ export const CALCULATOR_BUTTONS: Buttons = [
   },
   {
     value: "x",
-    handler: null,
+    handler: performOperation,
     className: "gradient-gold-golder",
+    operator: "*",
   },
 
   {
@@ -83,11 +92,18 @@ export const CALCULATOR_BUTTONS: Buttons = [
     className: "colspan-2",
   },
   {
-    value: ",",
-    handler: null,
+    value: ".",
+    handler: addDot,
   },
   {
     value: "=",
     handler: result,
   },
 ];
+
+export const BASE_CALC_STATE: CalculatorState = {
+  value: null,
+  displayValue: "0",
+  operator: null,
+  waitingForOperand: false,
+};
