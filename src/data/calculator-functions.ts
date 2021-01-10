@@ -73,6 +73,7 @@ export const convertToPercent = ({
   });
 };
 
+// Get this to work as an arrow function
 export function performOperation({ calculatorUpdator }: OperationalParamsV2) {
   calculatorUpdator((state) => {
     const { value, displayValue, operator } = state;
@@ -109,8 +110,8 @@ export function performOperation({ calculatorUpdator }: OperationalParamsV2) {
 }
 
 const CALCULATOR_OPERATIONS = {
-  "/": (prevValue, nextValue) => prevValue / nextValue,
-  "*": (prevValue, nextValue) => prevValue * nextValue,
+  "÷": (prevValue, nextValue) => prevValue / nextValue,
+  x: (prevValue, nextValue) => prevValue * nextValue,
   "+": (prevValue, nextValue) => prevValue + nextValue,
   "-": (prevValue, nextValue) => prevValue - nextValue,
   "=": (prevValue, nextValue) => nextValue,

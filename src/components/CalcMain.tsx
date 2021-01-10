@@ -32,7 +32,7 @@ const CalcMain: React.FC = () => {
                   params: {
                     calculatorUpdator: updateCalcState,
                   },
-                  operator: operator,
+                  operator: value,
                 }}
               />
               // () => setQueryString((q) => q + c)

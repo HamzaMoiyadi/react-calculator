@@ -30,7 +30,6 @@ export const CALCULATOR_BUTTONS: Buttons = [
     value: "÷",
     handler: performOperation,
     className: "gradient-gold-golder",
-    operator: "/",
   },
   {
     value: "7",
@@ -48,7 +47,6 @@ export const CALCULATOR_BUTTONS: Buttons = [
     value: "x",
     handler: performOperation,
     className: "gradient-gold-golder",
-    operator: "*",
   },
 
   {
@@ -65,7 +63,7 @@ export const CALCULATOR_BUTTONS: Buttons = [
   },
   {
     value: "-",
-    handler: null,
+    handler: performOperation,
     className: "gradient-gold-golder",
   },
 
@@ -83,7 +81,7 @@ export const CALCULATOR_BUTTONS: Buttons = [
   },
   {
     value: "+",
-    handler: null,
+    handler: performOperation,
     className: "gradient-gold-golder",
   },
   {
