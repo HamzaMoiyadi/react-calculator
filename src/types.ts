@@ -2,7 +2,6 @@ export interface ButtonData {
   value: string;
   handler: Function;
   className?: string;
-  operator?: string;
 }
 
 export type CalculatorState = {

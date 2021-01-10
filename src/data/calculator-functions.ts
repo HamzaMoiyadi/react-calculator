@@ -116,7 +116,3 @@ const CALCULATOR_OPERATIONS = {
   "-": (prevValue, nextValue) => prevValue - nextValue,
   "=": (prevValue, nextValue) => nextValue,
 };
-const specialOperatorMap = {
-  x: "*",
-  "÷": "/",
-};

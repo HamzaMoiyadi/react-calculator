@@ -21,7 +21,7 @@ const CalcMain: React.FC = () => {
         <div className="[ calculator-buttons-container ]">
           {CALCULATOR_BUTTONS.map((c, i) => {
             // const value = operatorMapper(c.value);
-            const { value, handler, className, operator } = c;
+            const { value, handler, className } = c;
             return (
               <CalcButton
                 key={i}
@@ -40,7 +40,6 @@ const CalcMain: React.FC = () => {
           })}
         </div>
       </div>
-      <span>{JSON.stringify(calcState)}</span>
     </>
   );
 };

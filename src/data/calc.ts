@@ -12,7 +12,7 @@ type Buttons = ButtonData[];
 
 export const CALCULATOR_BUTTONS: Buttons = [
   {
-    value: "C",
+    value: "AC",
     handler: allClear,
     className: "gradient-lilac-lilacer",
   },
