@@ -1,8 +1,15 @@
-import { ButtonData } from "../types";
+import { finalDisplayValue } from "../data/utils";
+import {
+  OperationalParamsV2
+} from "../types";
 
 type CalcButtonProps = {
   value: string;
-  onClickHandler: { handler: Function; params: any };
+  onClickHandler: {
+    handler: Function;
+    params: OperationalParamsV2;
+    operator?: string;
+  };
   customClassName: string;
 };
 const CalcButton: React.FC<CalcButtonProps> = ({
@@ -15,11 +22,19 @@ const CalcButton: React.FC<CalcButtonProps> = ({
       className={`[ calc-button ] [ ${customClassName ?? ""} ]`}
       onClick={() => {
         try {
-          const { setq, setpq } = onClickHandler.params;
+          const { calculatorUpdator } = onClickHandler.params;
           if (onClickHandler.handler) {
-            onClickHandler.handler(setq, setpq, value);
+            onClickHandler.handler({ calculatorUpdator });
           } else {
-            setq((q) => q + value);
+            calculatorUpdator((state) => {
+              const { waitingForOperand, displayValue } = state;
+              // Figure out the final value that has to be displayed on the output
+
+              return {
+                ...state,
+                ...finalDisplayValue(waitingForOperand, displayValue, value),
+              };
+            });
           }
         } catch (error) {
           console.log(error);
